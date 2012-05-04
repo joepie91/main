@@ -1,0 +1,112 @@
+html, body
+{
+	background-color: #F8F8F8;
+	font-family: 'Duru Sans', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper
+{
+	width: 940px;
+	margin: 0px auto;
+	text-align: justify;
+}
+
+section, header, footer, nav, article, aside
+{
+	display: block;
+}
+
+header.page, footer.page
+{
+	background: rgb(214,124,14); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(214,124,14,1) 0%, rgba(165,60,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,124,14,1)), color-stop(100%,rgba(165,60,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(214,124,14,1) 0%,rgba(165,60,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(214,124,14,1) 0%,rgba(165,60,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(214,124,14,1) 0%,rgba(165,60,0,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(214,124,14,1) 0%,rgba(165,60,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d67c0e', endColorstr='#a53c00',GradientType=0 ); /* IE6-9 */
+}
+
+header.page
+{
+	padding: 16px 0px;
+	color: white;
+}
+
+header.page h1
+{
+	margin: 0px;
+	text-shadow: 0px 0px 4px #fab937;
+	-webkit-text-shadow: 0px 0px 4px #fab937;
+	-moz-text-shadow: 0px 0px 4px #fab937;
+	-o-text-shadow: 0px 0px 4px #fab937;
+	-ms-text-shadow: 0px 0px 4px #fab937;
+}
+
+header.section h2
+{
+	margin-bottom: 8px;
+	color: #582B00;
+}
+
+footer.page
+{
+	margin-top: 16px;
+	font-size: 14px;
+	padding: 7px 0px;
+	color: white;
+}
+
+section
+{
+	margin-left: 4px;
+}
+
+section p
+{
+	margin-top: 3px;
+	margin-bottom: 14px;
+}
+
+aside
+{
+	max-width: 220px;
+	margin: 12px 22px;
+	margin-top: 12px;
+	padding: 8px;
+	background-color: #FFEEA8;
+	border: 1px solid #F6D44A;
+	font-size: 14px;
+	box-shadow: 0px 0px 15px 1px #ada361, 0px 0px 3px 0px #c0d900 inset;
+	-webkit-box-shadow: 0px 0px 15px 1px #ada361, 0px 0px 3px 0px #c0d900 inset;
+	-moz-box-shadow: 0px 0px 15px 1px #ada361, 0px 0px 3px 0px #c0d900 inset;
+	-o-box-shadow: 0px 0px 15px 1px #ada361, 0px 0px 3px 0px #c0d900 inset;
+	-ms-box-shadow: 0px 0px 15px 1px #ada361, 0px 0px 3px 0px #c0d900 inset;
+}
+
+aside.left
+{
+	float: left;
+	margin-left: 0px;
+}
+
+aside.right
+{
+	float: right;
+	margin-right: 0px;
+}
+
+aside h3
+{
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+aside p
+{
+	margin-bottom: 0px;
+	margin-top: 4px;
+}
