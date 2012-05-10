@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+import re, os, subprocess
+
+cwd = os.getcwd()
+
+f = open("%s/.git/HEAD" % cwd, "r")
+head = f.read()
+branch = re.search("([^/]+)$", head).group(1).strip()
+
+f = open("%s/.git/refs/heads/%s" % (cwd, branch), "r")
+commit = f.read().strip()
+
+result = subprocess.call(["%s/.git/hooks/post-commit-script" % cwd, commit, branch])
+
+if result == 0:
+	print "Successfully reported commit to CIA.vc"
+else:
+	print "Reporting commit to CIA.vc failed"

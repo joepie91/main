@@ -1,0 +1,7 @@
+Place both files in the .git/hooks directory. 
+Ensure you have Python and Perl installed.
+Don't forget to chmod +x both scripts!
+
+After each commit, the Python wrapper will fish the last commit out of
+your repository, and run the Perl script with the branch and commit as
+arguments.
