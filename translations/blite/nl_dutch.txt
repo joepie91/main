@@ -14,7 +14,7 @@ $lang = array (
 	"noarchives"     => "Geen archieven",
 	"noposts"        => "Geen posts",
 	"nocomments"     => "Geen reacties",
-	"commenton"      => "aan",
+	"commenton"      => "op",
 
 	/* Information bar at top */
 	
