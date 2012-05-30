@@ -1,0 +1,263 @@
+<?php
+// Language strings generated in PHP files.
+
+$lang = array (
+
+	/* Sidebar */
+	
+	"categories"     => "Categorieën",
+	"archives"       => "Archieven",
+	"recentposts"    => "Recente Posts",
+	"recentcomments" => "Recente Reacties",
+	"administration" => "Beheer",
+	"nocategories"   => "Geen categorieën",
+	"noarchives"     => "Geen archieven",
+	"noposts"        => "Geen posts",
+	"nocomments"     => "Geen reacties",
+	"commenton"      => "aan",
+
+	/* Information bar at top */
+	
+	"archiveinfo"    => "Archief voor #month# heeft #numberposts#",
+	"categoryinfo"   => "Categorie <em>#name#</em> heeft #numberposts#",
+	"post"           => "Post",
+	"posts"          => "Posts",
+
+	/* Main content - posts and comments */
+	
+	"nocontent"      => "Geen inhoud.",
+	"postedin"       => "Geplaatst op #date# in #categories#",
+	"draftsavedin"   => "Opgeslagen op #date# in #categories#",
+	"draft"          => "Concept",
+	"notfound"       => "Niet Gevonden",
+	"notfoundtext"   => "Het item dat je hebt opgevraagd kon niet gevonden worden.",
+	"notavail"       => "Niet Beschikbaar",
+	"notavailtext"   => "Het item dat je hebt opgevraagd is momenteel niet beschikbaar.",
+	"retracted"      => "Ingetrokken",
+	"readmore"       => "Lees Meer",
+	"comments"       => "Reacties",
+	"comment"        => "Reactie",
+	"comclosed"      => "Gesloten",
+	"commentsclosed" => "Reacties zijn niet mogelijk voor deze post.",
+	"edit"           => "Bewerken",
+	"quote"          => "Quote",
+	"permalink"      => "Permalink",
+	"admineditpost"  => "Post Bewerken",
+	"admindelpost"   => "Post Intrekken",
+	"adminpubpost"   => "Post Publiceren",
+	"adminclosecom"  => "Reacties verbieden",
+	"adminopencom"   => "Reacties toelaten",
+	"delpostcfrm"    => "Weet je zeker dat je deze post in wilt trekken?",
+	"pubpostcfrm"    => "Weet je zeker dat je deze post wilt publiceren?",
+	"closecomcfrm"   => "Weet je zeker dat je reacties op deze post wilt verbieden?", 
+	"opencomcfrm"    => "Weet je zeker dat je reacties op deze post weer toe wilt laten??", 
+	"admindelcom"    => "Verwijderen",
+	"adminspam"      => "Spam",
+	"adminham"       => "Geen Spam",
+	"trainspamcfrm"  => "Deze reactie als Spam markeren?",
+	"trainhamcfrm"   => "Deze reactie als Geen Spam markeren?",
+	"delcomcfrm"     => "Deze reactie verwijderen?",
+	
+	/* Comment form */
+	
+	"name"           => "Naam",
+	"email"          => "E-mailadres",
+	"website"        => "Website",
+	"addcomment"     => "Reactie Toevoegen",
+	"editcomment"    => "Reactie Bewerken",
+	"cookiesenabled" => "Cookies moeten ingeschakeld zijn om reacties te kunnen plaatsen.",
+	"mayedit"        => "Je kunt je reactie <strong>eenmalig</strong> bewerken, binnen <strong>#editduration# minuten</strong> na plaatsing.",
+	"blogspam"       => "<strong>blogspam.net</strong> wordt gebruikt om Spam te herkennen. Reacties die als spam worden aangemerkt moeten door een beheerder goedgekeurd worden alvorens ze verschijnen.",
+	"citation"       => "<em>#name# schreef:</em>",
+	"allowedtags"    => "Toegestane HTML-tags",
+	"usecode"        => "Gebruik &lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt; om HTML- of PHP-code als code weer te geven.",
+
+	/* Comment form submission errors */
+	
+	"forminvalid"    => "Ongeldige invoer.",
+	"namereq"        => "Naam is verplicht.",
+	"namerestr"      => "Die naam is niet toegestaan.",
+	"emailreq"       => "E-mailadres is verplicht.",
+	"emailrestr"     => "Dat e-mailadres is niet toegestaan.",
+	"emailinvalid"   => "E-mailadres is ongeldig.",
+	"commentreq"     => "Reactie is vereist.",
+	"webinvalid"     => "Website-URL is ongeldig.",
+	"blogspampos"    => "Je reactie is aangemerkt als mogelijke spam en moet door een beheerder goedgekeurd worden alvorens hij verschijnt.",
+	"errors"         => "Fout(en):",
+	"permdenied"     => "Toegang Geweigerd",
+	"noeditmsg"      => "Je hebt geen toestemming om deze reactie te bewerken.",
+	
+	/* Footer */
+	
+	"page"           => "Pagina",
+	"pages"          => "Pagina's",
+	"alltimesGMT"    => "Alle tijden zijn aangegeven in GMT.",
+	"localtime"      => "Huidige tijd",
+	"hours"          => "uur",
+	"home"           => "Home",
+	"adminlogin"     => "Inloggen",
+	"adminlogout"    => "Uitloggen",
+	"adminnewpost"   => "Nieuwe Post",
+	"adminsettings"  => "Instellingen",
+	"admindrafts"    => "Concepten",
+	"adminretracted" => "Ingetrokken",
+	"admincats"      => "Categorieën",
+	"adminspambox"   => "Spambox",
+	
+	/* Login / Logout page */
+	
+	"loginmsg"       => "Inloggen...",
+	"logoutmsg"      => "Uitloggen...",
+	"username"       => "Gebruikersnaam",
+	"password"       => "Wachtwoord",
+	"passwordwrong"  => "Onjuist wachtwoord",
+	
+	/* RSS feeds */
+	
+	"comrsstitle"    => "RSS-feed met reacties",
+	"artrsstitle"    => "RSS-feed met posts",
+	
+	/* New Post page */
+	
+	"title"          => "Titel",
+	"text"           => "Tekst",
+	"newpost"        => "Nieuwe Post",
+	"editpost"       => "Post Bewerken",
+	"newcategory"    => "Nieuwe categorie:",
+	"titlereq"       => "Titel is vereist.",
+	"textreq"        => "Tekst is vereist.",
+	"catreq"         => "Minstens één categorie is vereist.",
+	"savedraft"      => "Opslaan als Concept",
+	"saveretracted"  => "Opslaan &amp; Intrekken",
+	"save"           => "Opslaan",
+	"savepublish"    => "Opslaan &amp; Nu Publiceren",
+	"cancelback"     => "Annuleren / Terug",
+	
+	/* Drafts, Retracted, Category and Spambox pages */
+	
+	"draftposts"     => "Concepten",
+	"nodrafts"       => "Geen concepten.",
+	"retractedposts" => "Ingetrokken Posts",
+	"noretracted"    => "Geen ingetrokken posts.",
+	"category"       => "Categorie",
+	"datetime"       => "Datum &amp; Tijd",
+	"actions"        => "Bewerkingen",
+	"rename"         => "Hernoemen:",
+	"remove"         => "Verwijderen",
+	"emptyremove"    => "Lege categorieën kunnen worden verwijdered.",
+	"hasunpub"       => "Categorie kan niet verwijderd worden omdat deze ongepubliceerde posts bevat",
+	"or"             => "of",
+	"commentpub"     => "Reactie Gepubliceerd",
+	"viewcomment"    => "Reactie bekijken",
+	"pubcomment"     => "Markeren voor Publicatie",
+	"updatespambox"  => "Spambox Bijwerken",
+	"purgeunmarked"  => "Ongemarkeerde items opruimen",
+	"oneinspambox"   => "1 reactie in de spambox",
+	"numinspambox"   => "#numspam# reacties in de spambox",
+	"nospam"         => "Geen spam.",
+	
+	/* Settings page */
+	
+	"noadmin"        => "Gebruikersnaam van de beheerder kan niet leeg zijn.",
+	"noconfirm"      => "Voer het wachtwoord van de beheerder opnieuw in om te bevestigen.",
+	"nomatch"        => "Wachtwoord en bevestiging komen niet overeen.",
+	"mailinvalid"    => "Email-adres is ongeldig.",
+	"notheme"        => "Kies een thema (onder Weergave)",
+	"nolang"         => "Kies een taal (onder Weergave).",
+	"blogspamdep"    => "Blogspam.net spamherkenning vereist de PHP-xmlrpc-extensie, welke momenteel niet geinstalleerd is.",
+	
+	"general"        => "Algemeen",
+	"display"        => "Weergave",
+	"sidebar"        => "Zijbalk",
+	"formsec"        => "Veiligheid",
+	"rssfeeds"       => "RSS-Feeds",
+	
+	"sitename"       => "Sitenaam",
+	"description"    => "Omschrijving",
+	"administrator"  => "Beheerder",
+	"passwordagain"  => "Wachtwoord nogmaals",
+	"displayname"    => "Schermnaam",
+	"passwordnote"   => "Laat de wachtwoordvelden leeg om het huidige wachtwoord te behouden.",
+	
+	"displayopts"    => "Weergave-opties",
+	"theme"          => "Thema",
+	"choosetheme"    => "Kies thema...",
+	"language"       => "Taal",
+	"chooselang"     => "Kies taal...",
+	"showperpage"    => "#input# posts per pagina",
+	"excerpts"       => "Uittreksels inschakelen",
+	"showstats"      => "SQL- en PHP-statistieken weergeven in footer",
+	"caching"        => "Browser- en Schijf-caching",
+	"cssver"         => "Versienummer aan browse.css toevoegen",
+	"sbcache"        => "Zijbalk-schijfcache legen",
+	"excache"        => "Uittreksel-schijfcache legen",
+	
+	"placeholders"   => "Dummy voor Zijbalk-inhoud (onder)",
+	"sidebaropts"    => "Zijbalk-opties",
+	"enablecats"     => "Categorieën inschakelen",
+	"enablearch"     => "Archieven inschakelen",
+	"numrecentposts" => "Laat #input# meest recente posts zien (0 om uit te schakelen)",
+	"numrecentcom"   => "Laat #input# meest recente reacties zien (0 om uit te schakelen)",
+	"sidebarcontent" => "Zijbalk-inhoud",
+	
+	"enablecomments" => "Reacties toelaten",
+	"restrictadmin"  => "Gebruik van beheerders-gebruikersnaam en -e-mailadres niet toelaten (behalve wanneer ingelogd)",
+	"maxcomlength"   => "Maximale reactie-lengte",
+	"characters"     => "tekens",
+	"alloweditfor"   => "Bewerken toestaan gedurende",
+	"minutes"        => "minuten na plaatsing",
+	"spacesep"       => "gescheiden door spaties",
+	"waitbetween"    => "Wachttijd tussen reacties",
+	"seconds"        => "seconden",
+	"nofollow"       => "'nofollow'-attribuut aan links toevoegen",
+	"opennew"        => "Links openen in nieuw venster/tab",
+	"enableblogspam" => "Blogspam.net-spamherkenning inschakelen",
+	"enablebayes"    => "Bayesiaanse analyse inschakelen wanneer",
+	"numham"         => "reacties als Geen Spam zijn gemarkeerd, en",
+	"numspam"        => "reacties als Spam zijn gemarkeerd",
+	"deletespam"     => "Verwijder reactie na markeren als Spam",
+	
+	"noncesalt"      => "Nonce-salt",
+	"noncelife"      => "Nonce-levensduur",
+	"nonceprune"     => "Opruimen Iedere",
+	
+	"articlesfeed"   => "Posts-feed",
+	"commentfeeds"   => "Reactie-feeds",
+	"enableart"      => "Feed voor posts inschakelen",
+	"rssnumposts"    => "Voor #input# meest recente posts",
+	"enablecom"      => "Feeds voor reacties inschakelen",
+	"rssnumcom"      => "Voor #input# meeste recente reacties",
+	"rssusefirst"    => "Gebruik eerste #input# tekens als omschrijving",
+	"ifnoexcerpt"    => "(als een uittreksel niet beschikbaar is)",
+	"includefull"    => "Volledige inhoud bijvoegen (m.b.v. CDATA)"
+);
+
+$months = array (
+	1  => 'januari',
+	2  => 'februari',
+	3  => 'maart',
+	4  => 'april',
+	5  => 'mei',
+	6  => 'juni',
+	7  => 'juli',
+	8  => 'augustus',
+	9  => 'september',
+	10 => 'oktober',
+	11 => 'november',
+	12 => 'december'
+);
+$months_abbr = array (
+	1  => 'jan',
+	2  => 'feb',
+	3  => 'mrt',
+	4  => 'apr',
+	5  => 'mei',
+	6  => 'jun',
+	7  => 'jul',
+	8  => 'aug',
+	9  => 'sep',
+	10 => 'okt',
+	11 => 'nov',
+	12 => 'dec'
+);
+?>
