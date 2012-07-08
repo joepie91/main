@@ -88,7 +88,7 @@ while True:
 			
 			if re.match(options['regex'], nick):
 				if options['action_gline']:
-					sock.send("GLINE *@%s %s :%s\r\n" % (host, options['duration'], options['message']))
+					sock.send("GLINE *@%s %s :[%s] %s\r\n" % (host, options['duration'], nick, options['message']))
 					print "Glined *@%s" % host
 				if options['action_kill']:
 					sock.send("KILL %s :%s\r\n" % (nick, options['message']))
