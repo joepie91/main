@@ -80,21 +80,24 @@ while True:
 			sock.send("WHO ** h\r\n")
 			print "Requested userlist."
 		elif parts[0] == "352":
-			ident = parts[3]
-			host = parts[4].replace("[..]", ":")
-			leaf = parts[5]
-			nick = parts[6]
-			realname = parts[8][3:]
-			
-			if re.match(options['regex'], nick):
-				if options['action_gline']:
-					sock.send("GLINE *@%s %s :[%s] %s\r\n" % (host, options['duration'], nick, options['message']))
-					print "Glined *@%s" % host
-				if options['action_kill']:
-					sock.send("KILL %s :%s\r\n" % (nick, options['message']))
-					print "Killed %s" % nick
-				if options['action_list']:
-					print "Matched user: %s!%s@%s" % (nick, ident, host)
+			try:
+				ident = parts[3]
+				host = parts[4].replace("[..]", ":")
+				leaf = parts[5]
+				nick = parts[6]
+				realname = parts[8][3:]
+				
+				if re.match(options['regex'], nick):
+					if options['action_gline']:
+						sock.send("GLINE *@%s %s :[%s] %s\r\n" % (host, options['duration'], nick, options['message']))
+						print "Glined *@%s" % host
+					if options['action_kill']:
+						sock.send("KILL %s :%s\r\n" % (nick, options['message']))
+						print "Killed %s" % nick
+					if options['action_list']:
+						print "Matched user: %s!%s@%s" % (nick, ident, host)
+			except IndexError:
+				print "WARNING: Ignored user due to parsing error."
 		elif parts[0] == "315":
 			print "All users checked, exiting..."
 			sock.send("QUIT :rakill.py bot killer\r\n")
