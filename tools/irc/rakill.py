@@ -1,7 +1,7 @@
 import socket, argparse, sys, time, re
 
 def split_irc(message):
-	message = re.sub("(?<=[0-9A-FI]):(?=[0-9A-FI])", "[..]", message)
+	message = re.sub("(?<=[0-9A-Fa-fI]):(?=[0-9A-Fa-fI])", "[..]", message)
 	
 	if ":" in message:
 		first, second = message.split(":", 1)
