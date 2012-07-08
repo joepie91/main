@@ -100,5 +100,8 @@ while True:
 			sock.send("QUIT :rakill.py bot killer\r\n")
 			time.sleep(1)
 			exit(0)
+		elif parts[0] == "491":
+			print "Invalid oper credentials given."
+			exit(1)
 
 	time.sleep(0.005)
