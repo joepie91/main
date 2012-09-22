@@ -4,7 +4,6 @@ default_headers = {
 	'User-Agent': "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13",
 	'Referer': start_page
 }
-date_regex = '(?P<month>[0-9]{1,2})\/(?P<day>[0-9]{1,2})\/(?P<year>[0-9]{4})\s(?P<hour>[0-9]{1,2})[:.](?P<minute>[0-9]{1,2})[:.](?P<second>[0-9]{1,2})\s(?P<period>AM|PM)'
 
 import re, urllib2, datetime, argparse, os, json, time
 from bs4 import BeautifulSoup
