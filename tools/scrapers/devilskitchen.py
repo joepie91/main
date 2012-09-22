@@ -31,12 +31,15 @@ def fetch_archives():
 	status_code, headers, response = fetch_page_headers(start_page, default_headers)
 	
 	if status_code == 200:
-		archive_pages = re.findall("http:\/\/www\.devilskitchen\.me\.uk\/[0-9]{4}_[0-9]{2}_[0-9]{2}_archive\.html", response)
+		archive_pages = re.findall("(http:\/\/www\.devilskitchen\.me\.uk\/([0-9]{4})_([0-9]{2})_[0-9]{2}_archive\.html)", response)
 		
 		for page in archive_pages:
-			print "Scraping %s..." % page
-			fetch_articles(page)
-			time.sleep(20)
+			if os.path.exists("%s/%s-%s" % (options['output_dir'], page[1], page[2])):
+				print "%s-%s already exists, skipping..." % (page[1], page[2])
+			else:
+				print "Scraping %s..." % page[0]
+				fetch_articles(page[0])
+				time.sleep(5)
 	else:
 		print "ERROR: Failed to retrieve archive index! Exiting..."
 		exit(1)
