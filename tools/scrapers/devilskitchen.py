@@ -34,7 +34,7 @@ def fetch_archives():
 		archive_pages = re.findall("(http:\/\/www\.devilskitchen\.me\.uk\/([0-9]{4})_([0-9]{2})_[0-9]{2}_archive\.html)", response)
 		
 		for page in archive_pages:
-			if os.path.exists("%s/%s-%s" % (options['output_dir'], page[1], page[2])):
+			if os.path.exists("%s/%s-%d" % (options['output_dir'], page[1], int(page[2]))):
 				print "%s-%s already exists, skipping..." % (page[1], page[2])
 			else:
 				print "Scraping %s..." % page[0]
@@ -46,7 +46,11 @@ def fetch_archives():
 		
 
 def fetch_articles(url):
-	status_code, headers, response = fetch_page_headers(url, default_headers)
+	try:
+		status_code, headers, response = fetch_page_headers(url, default_headers)
+	except urllib2.HTTPError, e:
+		print "ERROR: 403 encountered on %s" % url
+		return False
 	
 	if status_code == 200:
 		soup = BeautifulSoup(response)
