@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#http://ex.fm/api/v3/song/search/rameau?results=
+
 import argparse, os, urllib, json, subprocess, urllib2
 
 parser = argparse.ArgumentParser(description='Searches for music files')
