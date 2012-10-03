@@ -93,6 +93,10 @@ class PathValidator
 					$userinfo = posix_getpwuid(posix_getuid());
 					$homedir = $userinfo['dir'];
 				}
+				else
+				{
+					throw new Exception("Could not find a way to get the home directory of the current user.");
+				}
 				
 				$homedir = $this->RemoveTrailingSlash($homedir);
 				
