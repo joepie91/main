@@ -21,18 +21,25 @@ class PathValidator
 		
 		if($root_path != null)
 		{
-			$root_stack = explode("/", $root_path);
-			$path_stack = explode("/", $this->path);
-			
-			for($i = 0; $i < count($root_stack); $i++)
+			if($this->RelativeDepth($root) >= 0)
 			{
-				if($root_stack[$i] != $path_stack[$i])
+				$root_stack = explode("/", $root_path);
+				$path_stack = explode("/", $this->path);
+				
+				for($i = 0; $i < count($root_stack); $i++)
 				{
-					return false;
+					if($root_stack[$i] != $path_stack[$i])
+					{
+						return false;
+					}
 				}
+				
+				return true;
 			}
-			
-			return true;
+			else
+			{
+				return false;
+			}
 		}
 		else
 		{
