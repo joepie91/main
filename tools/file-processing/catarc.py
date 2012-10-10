@@ -23,13 +23,13 @@ def to_bytes(size):
 	size = size.lower().strip()
 	
 	if size.endswith("t"):
-		return int(size) * 1024 * 1024 * 1024 * 1024
+		return int(size[:-1]) * 1024 * 1024 * 1024 * 1024
 	elif size.endswith("g"):
-		return int(size) * 1024 * 1024 * 1024
+		return int(size[:-1]) * 1024 * 1024 * 1024
 	elif size.endswith("m"):
-		return int(size) * 1024 * 1024
+		return int(size[:-1]) * 1024 * 1024
 	elif size.endswith("k"):
-		return int(size) * 1024
+		return int(size[:-1]) * 1024
 	else:
 		return int(size)
 
