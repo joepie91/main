@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # This script will run the appropriate command to print archive contents to stdout
+# Written by Sven Slootweg, Licensed under WTFPL - in other words, feel free to reuse for whatever purpose you desire.
 
 import os, argparse, sys, subprocess
 
