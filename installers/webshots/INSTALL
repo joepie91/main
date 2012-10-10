@@ -1,0 +1,1 @@
+wget http://cryto.net/projects/webshots/webshots_debian.sh && chmod +x webshots_debian.sh && ./webshots_debian.sh
