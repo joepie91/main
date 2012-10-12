@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install -y lua50 liblua5.1-0-dev python python-setuptools git-core openssl libssl-dev bzip2 build-essential
+apt-get install -y lua50 liblua5.1-0-dev python python-setuptools git-core openssl libssl-dev bzip2 build-essential curl
 if [ $? -ne 0 ]; then echo "[X] Installing dependencies failed. Exiting..."; exit 1; fi
 
 easy_install pip
