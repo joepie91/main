@@ -1,0 +1,51 @@
+# A complete example
+
+$ ^ my_function(**argument**, **another_argument**)
+		
+$$	Some kind of text describing the function goes here. `Also some mono-spaced text.`
+
+$$	! Only ever use this function with the number '42'!
+
+$$	argument::
+		This is the first argument to this example function.
+		
+$$	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+		We can also add an {>documentation}(internal link) and an {http://google.com/}(external link).
+		
+$$	@ Using this function
+
+$$		$ if some_variable == True:
+		
+$$		$$	my_function(42, "The answer to everything")
+
+$$		> The answer to everything is 42!
+
+$$		>>	Did you know The answer to everything is 42?
+
+## Result
+
+^ my_function(**argument**, **another_argument**)
+		
+	Some kind of text describing the function goes here. `Also some mono-spaced text.`
+
+	! Only ever use this function with the number '42'!
+
+	argument::
+		This is the first argument to this example function.
+		
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+		We can also add an {>documentation}(internal link) and an {http://google.com/}(external link).
+		
+	@ Using this function
+
+		$ if some_variable == True:
+		
+		$$	my_function(42, "The answer to everything")
+
+		> The answer to everything is 42!
+
+		>>	Did you know The answer to everything is 42?

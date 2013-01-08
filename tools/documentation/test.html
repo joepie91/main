@@ -1,0 +1,128 @@
+<style>
+body {
+	background-color: #F5F5F5;
+	font-family: sans-serif;
+	margin-right: 40px;
+}
+
+.children { padding-left: 40px; }
+
+.definition
+{
+	font-weight: bold;
+	margin-top: 32px;
+}
+
+.example 
+{ 
+	padding: 5px 6px;
+	font-weight: bold;
+	font-size: 15px;
+	background-color: #E6E6E6; 
+	margin-top: 11px;
+}
+
+.example > .children
+{
+	padding-top: 11px;
+	padding-left: 10px;
+}
+
+.example > .children > h7
+{
+	font-size: 13px;
+}
+
+h7
+{
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+pre
+{
+	margin-top: 0px;
+	padding: 6px 7px;
+	background-color: #D9D9D9;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+dl
+{
+	margin: 5px 0px;
+}
+
+dt
+{
+	font-weight: bold;
+}
+
+dd
+{
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 8px;
+}
+
+.exclamation
+{
+	padding: 7px 8px;
+	margin: 11px 0px;
+	background-color: #FFE9AA;
+	border: 1px solid yellow;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.text
+{
+	font-size: 15px;
+	font-weight: normal;
+	margin: 11px 0px;
+}
+
+.toc
+{
+	border: 1px solid gray;
+	background-color: #E6E6E6;
+	padding: 8px 9px;
+	font-size: 15px;
+}
+
+.toc h2
+{
+	margin: 0px 0px 3px 0px;
+	font-size: 19px;
+}
+
+.toc ul
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 25px;
+}
+
+.toc li
+{
+	margin-bottom: 2px;
+}
+
+.toc .alternatives
+{
+	font-size: 12px;
+}
+
+.toc a
+{
+	color: #292722;
+}
+
+.toc a:hover
+{
+	color: black;
+}
+</style><div class="children"><h1>Engine.Random</h1><div class="text">The Random library provides several functions to pick random numbers or items.</div><div class="toc"><h2>Table of contents</h2><ul><li><a href="#def_Engine_Random_Numberminmaxprecision">Engine.Random.Number(min, max, precision)</a> Selects a random number between `min` and `max`, excluding `max` itself. </li><li><a href="#def_Engine_Random_Chooseitemitemitem">Engine.Random.Choose(item [, item [, item ...]])</a> Selects a random item from the supplied items. <span class="alternatives">(also:   Engine.Random.Choose(itemarray))</span></li><li><a href="#def_Engine_Random_Pickamountitemitemitem">Engine.Random.Pick(amount, item [, item [, item ...]])</a> Selects <em>amount</em> unique random items from the supplied items. Each item... <span class="alternatives">(also:   Engine.Random.Pick(amount, itemarray))</span></li></ul></div><div class="definition"><a name="def_Engine_Random_Numberminmaxprecision">Engine.Random.Number(<em>min</em>, <em>max</em>, <em>precision</em>) <div class="children"><div class="text">Selects a random number between `min` and `max`, excluding `max` itself.</div><dl><dt>min</dt><dd>The minimum number. <em>Defaults to 0.</em></dd></dl><dl><dt>max</dt><dd>The maximum number (itself excluded). <em>Defaults to 1.</em></dd></dl><dl><dt>precision</dt><dd>The precision; this is what the result will be rounded to. <em>Defaults to 0.00000001.</em></dd></dl><div class="example">Example: Get a whole number from 0 to 9 <div class="children"><h7>Code:</h7><pre class="code">Engine.Random.Number(0, 10, 1);</pre><h7>Output:</h7><pre class="output">7</pre></div></div><div class="example">Example: Get a one-tenth-precision number from 0 to 9.9 <div class="children"><h7>Code:</h7><pre class="code">Engine.Random.Number(0, 10, 0.1);</pre><h7>Output:</h7><pre class="output">3.7</pre></div></div><div class="example">Example: Get a one-fifth-precision number from 5 to 9.8: <div class="children"><h7>Code:</h7><pre class="code">Engine.Random.Number(5, 10, 0.2);</pre><h7>Output:</h7><pre class="output">6.4</pre></div></div></div></a></div><div class="definition"><a name="def_Engine_Random_Chooseitemitemitem">Engine.Random.Choose(<em>item</em> [, <em>item</em> [, <em>item</em> ...]])<br>  Engine.Random.Choose(<em>itemarray</em>) <div class="children"><div class="text">Selects a random item from the supplied items.</div><dl><dt>item</dt><dd>An item to choose from.</dd></dl><dl><dt>itemarray</dt><dd>An array of items to choose from.</dd></dl><div class="example">Example: Select a random color from a list using multiple arguments <div class="children"><h7>Code:</h7><pre class="code">Engine.Random.Choose("blue", "green", "red", "yellow");</pre><h7>Output:</h7><pre class="output">"green"</pre></div></div><div class="example">Example: Select a random day from a list using an array <div class="children"><h7>Code:</h7><pre class="code">var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+Engine.Random.Choose(days);</pre><h7>Output:</h7><pre class="output">"Thursday"</pre></div></div></div></a></div><div class="definition"><a name="def_Engine_Random_Pickamountitemitemitem">Engine.Random.Pick(<em>amount</em>, <em>item</em> [, <em>item</em> [, <em>item</em> ...]])<br>  Engine.Random.Pick(<em>amount</em>, <em>itemarray</em>) <div class="children"><div class="text">Selects <em>amount</em> unique random items from the supplied items. Each item can only appear in the result once.</div><div class="exclamation"><strong>Important:</strong> The <em>amount</em> argument must always be equal to or higher than the amount of supplied items!</div><dl><dt>amount</dt><dd>The amount of items to select.</dd></dl><dl><dt>item</dt><dd>An item to choose from.</dd></dl><dl><dt>itemarray</dt><dd>An array of items to choose from.</dd></dl><div class="example">Example: Select three random colors from a list using multiple arguments <div class="children"><h7>Code:</h7><pre class="code">Engine.Random.Pick(3, "red", "green", "blue", "yellow", "purple", "brown", "black", "white", "orange");</pre><h7>Output:</h7><pre class="output">["blue", "orange", "red"]</pre></div></div><div class="example">Example: Select two vegetables from a list using an array <div class="children"><h7>Code:</h7><pre class="code">var vegetables = ["celery", "potato", "tomato", "coleslaw", "onion"];
+Engine.Random.Pick(2, vegetables);</pre><h7>Output:</h7><pre class="output">["tomato", "onion"]</pre></div></div></div></a></div></div>

@@ -1,0 +1,62 @@
+# ZippyDoc
+
+Hi, this is the website of ZippyDoc, a compact, light-weight and human-readable format for documenting code, APIs, and other things, that can be easily converted to HTML.
+
+It is designed primarily to be simple to use (unlike complex markup languages like reStructuredText), and very code-oriented (unlike other simple markup languages like Markdown).
+You will probably learn the entire syntax in about 10 minutes.
+
+ZippyDoc (both the format and the parser) are licensed under the {http://www.wtfpl.net/}(WTFPL), meaning you can basically do with it whatever you want, and reuse it in any
+fashion you see fit. I hope it will help you write nicer, easier, and more complete documentation!
+
+While ZippyDoc is technically intended for documentation, I decided to whip up a simple index page in ZippyDoc as well - you're looking at it! :)
+
+## What does the ZippyDoc format look like?
+
+$ ^ my_function(argument1, argument2)
+
+$$	! This is just an example!
+
+$$	This is a function.
+
+$$	argument1::
+		This is the first argument.
+		
+$$	argument2::
+		This is the second argument.
+		
+$$	@ How to call my_function
+
+$$		$ my_function("ZippyDoc", "awesome")
+
+$$		> "ZippyDoc is awesome!"
+
+####### Result:
+
+^ my_function(argument1, argument2)
+
+	! This is just an example!
+
+	This is a function.
+
+	argument1::
+		This is the first argument.
+		
+	argument2::
+		This is the second argument.
+		
+	@ How to call my_function
+
+		$ my_function("ZippyDoc", "awesome")
+
+		> "ZippyDoc is awesome!"
+
+## Documentation
+
+The documentation for ZippyDoc can be found {>documentation}(here).
+
+## Downloading ZippyDoc
+
+ZippyDoc is still in a pretty messy stage, but it should already work reliably according to the current documentation. GitHub repository is coming soon, until that time you can
+{<zpy2html.py}(download the conversion script here). It's a Python script, so you'll need a Python interpreter of some sort. No dependencies are necessary, it only uses standard
+library functionality. Simply run it with all files you wish to convert as arguments, and it will convert each of them into a file with the same name, but a **.html** extension
+instead of the original extension. It's strongly recommended to name your ZippyDoc source files with the **.zpy** extension.

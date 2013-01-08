@@ -1,0 +1,325 @@
+# ZippyDoc format documentation
+
+{<documentation.zpy}(Download the ZippyDoc source of this page.)
+
+ZippyDoc is a compact, light-weight and code-oriented documentation markup language. 
+It allows you to easily write documentation for your code or APIs, and batch-convert it to HTML.
+
+{TOC}
+
+## Format overview
+
+ZippyDoc is a paragraph-oriented format, much like Markdown. Each paragraph represents a "block" of something, and no linebreaks are used anywhere - to start on a new line,
+you simply start out with a new paragraph. A block is indicated by a specific prefix. Tabs (not spaces!) are used to indent blocks and indicate children of previous blocks.
+A new "paragraph" is started by having two or more successive line-endings - this basically comes down to at least one empty line inbetween paragraphs.
+
+There is also some inline markup available, including emphasis, strong text, and hyperlinks to both other ZippyDoc documents and external locations.
+
+## Blocks
+
+Several block types exist. Some of them have "continuation characters" that indicate the continuation of the previous block in a new paragraph, as opposed to 
+starting a new block.
+
+^ Definition block
+	
+	A definition block is prefixed with a caret, and contains something along the lines of a function definition or type.
+	In this particular document, it is used to denote the types of blocks and markup elements. Inline markup (such as the emphasis for arguments in the below example) is applied.
+	These blocks are used for a table of contents if you choose to use one.
+	
+	@ Using a definition block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+			
+		$$	Some kind of text describing the function goes here.
+		
+	You can also have an alternative notation for a definition. This can be useful if you have aliased functions, or multiple input forms.
+	The alternative notation should be put on the same indentation as the original definition, but without a caret in front. The alternative
+	notations (there is no limit) are shown separately in the table of contents if you choose to use one. You may indent the alternative
+	notations with spaces to make the definition easier to read.
+	
+	@ Using a definition block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		  alt_func(**argument**, **another_argument**)
+			
+		$$	Some kind of text describing the function goes here.
+		
+^ Argument block
+
+	An argument block shows a particular argument or parameter, and its explanation. The argument name is suffixed with a double colon (::), and the explanation
+	follows on the next line. If so desired, the explanation can be indented with a tab - the tabs in front of the explanation will be eaten by the parser. The
+	explanation can also consist of multiple lines - the newlines are preserved in the HTML version. Inline markup is applied only in the explanation.
+	
+	@ Using an argument block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+		
+^ Example block
+
+	An example block shows an example of the function you are documenting, with code and output. The example block itself is prefixed with an @, and only specifies a title; 
+	you will use indented children of the Code and Output block variety to show respectively the code and the output for the example. These blocks will be explained later on.
+	The title of your example block will be prefixed with "Example:" in the output automatically.
+	
+	@ Using an example block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ Some code goes here.
+		
+		$$		> Some output goes here.
+		
+^ Code block
+
+	The code block is used in an example to show example code. It is prefixed with a dollar sign ($), and all text following it will be show on the HTML page verbatim, without
+	any further markup processing being done. It even allows you to display ZippyDoc formatting characters without having them interpreted, as is done on this page!
+	
+	@ Using a code block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ my_function(42, "The answer to everything")
+		
+		$$		> Some output goes here.
+		
+	It is also possible to have a code block spanning multiple paragraphs, without each paragraph being broken up into a separate code block (as would normally happen if you
+	just used the dollar sign). To do this, you can use two dollar signs at the start of the block. Note that after these two dollar signs, whitespace (except for spaces) is 
+	**not** eaten, meaning you can use tabs to indent further blocks of your code!
+	
+	@ Using a multi-paragraph code block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ if some_variable == True:
+		
+		$$		$$	my_function(42, "The answer to everything")
+		
+		$$		> Some output goes here.
+
+^ Output block
+
+	The output block is used to display sample output in an example. Just like the code block, it is shown exactly as it originally was, without any further formatting applied.
+	It is prefixed by a >, and like the code block it has a continuation character - in this case, that is >>.
+	
+	@ Using an output block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ my_function(42, "The answer to everything")
+		
+		$$		> The answer to everything is 42!
+	
+	@ Using a multi-paragraph output block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ my_function(42, "The answer to everything")
+		
+		$$		> The answer to everything is 42!
+		
+		$$		>> Did you know The answer to everything is 42?
+		
+^ Exclamation block
+
+	The exclamation block allows you to mark a block of text as "important". In the standard HTML layout, it will have a yellow-ish background, and will be prefixed
+	with "__Important!__". It is prefixed with an exclamation mark (!). Inline markup is applied.
+	
+	@ Using an exclamation block
+	
+		$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	! Only ever use this function with the number '42'!
+		
+		$$	argument::
+				This is the first argument to this example function.
+				
+		$$	another_argument::
+				This is the second argument to this example function.
+				As you can see, it's possible to split the explanation over multiple lines as well.
+				
+		$$	@ Using this function
+		
+		$$		$ my_function(42, "The answer to everything")
+		
+		$$		> The answer to everything is 42!
+	
+
+^ Header block
+
+	A header block is a generic header to indicate the start of a new section. It is treated as a separate element, not as a "container". The header blocks in ZippyDoc
+	work similarly to those in Markdown: they are prefixed by a hash (#), and the amount of hash characters defines what level of header it is.
+	
+	@ Using header blocks
+	
+		$ # This is a level 1 (largest) header.
+		
+		$$ ## This is a level 2 header.
+		
+		$$ ...
+		
+		$$ ####### This is a level 7 (smallest) header.
+	
+	
+^ Text block
+
+	A text block is any block that is not prefixed by a special character. It is shown as defined, with inline markup applied.
+
+
+## Inline markup
+
+There are also various forms of inline markup that you can use in your documentation.
+
+^ Emphasized text
+
+	Emphasized text is typically displayed as italic. You can emphasize text by enclosing it in two asterisks on each side.
+	
+	@ Emphasizing text
+	
+		$ This is just some text, and **this part is emphasized**.
+
+^ Strong text
+
+	Strong text is typically displayed as bold. You can make text strong by enclosing it in two underscores on each side.
+	
+	@ Making text strong
+	
+		$ This is just some text, __and this part is strong__.
+
+^ Internal references (hyperlinks)
+
+	Internal references are hyperlinks that point to other documents in the same documentation set. Depending on the export format (currently only HTML is supported),
+	the appropriate extension is automatically appended. The paths should resemble the directory structure you are storing the ZippyDoc source files in. The target
+	of the reference is enclosed in curly braces and prefixed with a >. If you wish to give the reference a friendly description, you can do so by appending it, 
+	enclosed in parentheses.
+	
+	@ Referencing another documentation page
+	
+		$ You can also view the API documentation at {>api/index}.
+		
+	@ Referencing another documentation page with a friendly description
+	
+		$ You can also view the {>api/index}(API documentation).
+		
+		
+^ External references (hyperlinks)
+
+	External references are hyperlinks just like the internal references, but they refer to an external resources. The syntax is identical to that of internal references,
+	except for the > disappearing. Note that external references are only picked up when the text enclosed in the braces is an actual URI of some sort.
+	
+	You can also force an external reference to be created by prefixing the URI with <. This is useful when you want to for example link to a download relative to the current
+	page.
+	
+	@ Referencing Google
+	
+		$ You could also search {http://www.google.com/}.
+		
+	@ Referencing another documentation page with a friendly description
+	
+		$ You could also search {http://www.google.com/}(Google).
+		
+	@ Referencing a relative file that is not a ZippyDoc document
+	
+		$ You can download it by {<file.zip}(clicking here).
+		
+^ Fixed-width text
+
+	Fixed-width text can be useful to indicate code elements or other things that would benefit from being displayed in a terminal-like font. You can make text fixed-width
+	by enclosing it in backticks.
+	
+	@ Fixed-width text
+	
+		$ Now enter `./run.sh` into your terminal.
+
+
+## Special tags
+
+Currently there is only one special tag. Special tags can be inserted anywhere in the document to insert a generated element.
+
+^ Table of contents
+
+	To insert a table of contents that is automatically generated from all definition blocks on the page, simply insert {TOC} on the page where you want it to appear (it has
+	to be in its own paragraph). Typically you will want to place it just below the main page header.
+	
+	Every item in a table of contents will be followed by a snippet of text, that is grabbed from the first Text block for that definition. Alternative notations are shown
+	after this description.
+	
+	@ Including a table of contents
+	
+		$ # Sample documentation
+		
+		$$ {TOC}
+		
+		$$ ^ my_function(**argument**, **another_argument**)
+		
+		$$	Some kind of text describing the function goes here.
+		
+		$$	...
+
+## Full example
+
+You can {>example}(view a full example here) of a ZippyDoc source file and its result.

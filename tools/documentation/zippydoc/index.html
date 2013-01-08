@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #F5F5F5;
+				font-family: sans-serif;
+				margin-right: 40px;
+			}
+
+			h2, h3, h4, h5, h6, h7
+			{
+				margin-top: 16px;
+				margin-bottom: 4px;
+			}
+
+			.children { padding-left: 40px; }
+
+			.definition
+			{
+				font-weight: bold;
+				margin-bottom: 32px;
+			}
+
+			.example 
+			{ 
+				padding: 5px 6px;
+				font-weight: bold;
+				font-size: 15px;
+				background-color: #E6E6E6; 
+				margin-top: 11px;
+			}
+
+			.example > .children
+			{
+				padding-top: 11px;
+				padding-left: 10px;
+			}
+
+			.example > .children > h7
+			{
+				font-size: 13px;
+			}
+
+			h7
+			{
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 2px;
+			}
+
+			pre
+			{
+				margin-top: 0px;
+				padding: 6px 7px;
+				background-color: #D9D9D9;
+				font-weight: normal;
+				font-size: 13px;
+			}
+
+			dl
+			{
+				margin: 5px 0px;
+			}
+
+			dt
+			{
+				font-weight: bold;
+			}
+
+			dd
+			{
+				font-size: 14px;
+				font-weight: normal;
+				margin-left: 8px;
+			}
+
+			.exclamation
+			{
+				padding: 7px 8px;
+				margin: 11px 0px;
+				background-color: #FFE9AA;
+				border: 1px solid yellow;
+				font-size: 15px;
+				font-weight: normal;
+			}
+
+			.text
+			{
+				font-size: 15px;
+				font-weight: normal;
+				margin-bottom: 14px;
+				margin-top: 10px;
+			}
+
+			.toc
+			{
+				border: 1px solid gray;
+				background-color: #E6E6E6;
+				padding: 8px 9px;
+				font-size: 15px;
+			}
+
+			.toc h2
+			{
+				margin: 0px 0px 3px 0px;
+				font-size: 19px;
+			}
+
+			.toc ul
+			{
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding-left: 25px;
+			}
+
+			.toc li
+			{
+				margin-bottom: 2px;
+			}
+
+			.toc .alternatives
+			{
+				font-size: 12px;
+			}
+
+			.toc a
+			{
+				color: #292722;
+			}
+
+			.toc a:hover
+			{
+				color: black;
+			}
+			
+			.fixed
+			{
+				font-family: monospace;
+				background-color: white;
+				padding: 1px 4px;
+				border: 1px solid silver;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="children"><h1>ZippyDoc</h1><div class="text">Hi, this is the website of ZippyDoc, a compact, light-weight and human-readable format for documenting code, APIs, and other things, that can be easily converted to HTML.</div><div class="text">It is designed primarily to be simple to use (unlike complex markup languages like reStructuredText), and very code-oriented (unlike other simple markup languages like Markdown). You will probably learn the entire syntax in about 10 minutes.</div><div class="text">ZippyDoc (both the format and the parser) are licensed under the <a href="http://www.wtfpl.net/">WTFPL</a>, meaning you can basically do with it whatever you want, and reuse it in any fashion you see fit. I hope it will help you write nicer, easier, and more complete documentation!</div><div class="text">While ZippyDoc is technically intended for documentation, I decided to whip up a simple index page in ZippyDoc as well - you're looking at it! :)</div><h2>What does the ZippyDoc format look like?</h2><h7>Code:</h7><pre class="code">^ my_function(argument1, argument2)
+
+	! This is just an example!
+
+	This is a function.
+
+	argument1::
+		This is the first argument.
+
+	argument2::
+		This is the second argument.
+
+	@ How to call my_function
+
+		$ my_function("ZippyDoc", "awesome")
+
+		&gt; "ZippyDoc is awesome!"</pre><h7>Result:</h7><div class="definition"><a name="def_my_functionargument1argument2">my_function(argument1, argument2) <div class="children"><div class="exclamation"><strong>Important:</strong> This is just an example!</div><div class="text">This is a function.</div><dl><dt>argument1</dt><dd>This is the first argument.</dd></dl><dl><dt>argument2</dt><dd>This is the second argument.</dd></dl><div class="example">Example: How to call my_function <div class="children"><h7>Code:</h7><pre class="code">my_function("ZippyDoc", "awesome")</pre><h7>Output:</h7><pre class="output">"ZippyDoc is awesome!"</pre></div></div></div></a></div><h2>Documentation</h2><div class="text">The documentation for ZippyDoc can be found <a href="documentation.html">here</a>.</div><h2>Downloading ZippyDoc</h2><div class="text">ZippyDoc is still in a pretty messy stage, but it should already work reliably according to the current documentation. GitHub repository is coming soon, until that time you can <a href="zpy2html.py">download the conversion script here</a>. It's a Python script, so you'll need a Python interpreter of some sort. No dependencies are necessary, it only uses standard library functionality. Simply run it with all files you wish to convert as arguments, and it will convert each of them into a file with the same name, but a <em>.html</em> extension instead of the original extension. It's strongly recommended to name your ZippyDoc source files with the <em>.zpy</em> extension.</div></div>
+	</body>
+</html>
