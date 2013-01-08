@@ -112,6 +112,7 @@ template = """
 				background-color: #E6E6E6;
 				padding: 8px 9px;
 				font-size: 15px;
+				margin-bottom: 12px;
 			}
 
 			.toc h2
