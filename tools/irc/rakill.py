@@ -41,9 +41,19 @@ parser.add_argument('--gline', dest='action_gline', action='store_true',
                    
 parser.add_argument('--kill', dest='action_kill', action='store_true',
                    help='kill all matching users')
+                   
+parser.add_argument('--unrealircd', dest='ircd_unreal', action='store_true',
+                   help='assume UnrealIRCd')
+                   
+parser.add_argument('--inspircd', dest='ircd_insp', action='store_true',
+                   help='assume InspIRCd')
 
 args = parser.parse_args()
 options = vars(args)
+
+if options['ircd_unreal'] == False and options['ircd_insp'] == False:
+	print "You did not specify an IRCd. Try again with --inspircd or --unrealircd switch."
+	exit(1)
 
 print "Connecting...",
 
@@ -77,7 +87,12 @@ while True:
 			sock.send("OPER %s %s\r\n" % (options['username'], options['password']))
 		elif parts[0] == "381":
 			print "Authenticated as oper."
-			sock.send("WHO ** h\r\n")
+			if options['ircd_insp'] == True:
+				# InspIRCd
+				sock.send("WHO ** h\r\n")
+			elif options['ircd_unreal'] == True:
+				# UnrealIRCd
+				sock.send("WHO +hR **\r\n")
 			print "Requested userlist."
 		elif parts[0] == "352":
 			try:

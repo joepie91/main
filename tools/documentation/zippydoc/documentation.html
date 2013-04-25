@@ -1,0 +1,275 @@
+
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #F5F5F5;
+				font-family: sans-serif;
+				margin-right: 40px;
+			}
+
+			h2, h3, h4, h5, h6, h7
+			{
+				margin-top: 16px;
+				margin-bottom: 4px;
+			}
+
+			.children { padding-left: 40px; }
+
+			.definition
+			{
+				font-weight: bold;
+				margin-bottom: 32px;
+			}
+
+			.example 
+			{ 
+				padding: 5px 6px;
+				font-weight: bold;
+				font-size: 15px;
+				background-color: #E6E6E6; 
+				margin-top: 11px;
+			}
+
+			.example > .children
+			{
+				padding-top: 11px;
+				padding-left: 10px;
+			}
+
+			.example > .children > h7
+			{
+				font-size: 13px;
+			}
+
+			h7
+			{
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 2px;
+			}
+
+			pre
+			{
+				margin-top: 0px;
+				padding: 6px 7px;
+				background-color: #D9D9D9;
+				font-weight: normal;
+				font-size: 13px;
+			}
+
+			dl
+			{
+				margin: 5px 0px;
+			}
+
+			dt
+			{
+				font-weight: bold;
+			}
+
+			dd
+			{
+				font-size: 14px;
+				font-weight: normal;
+				margin-left: 8px;
+			}
+
+			.exclamation
+			{
+				padding: 7px 8px;
+				margin: 11px 0px;
+				background-color: #FFE9AA;
+				border: 1px solid yellow;
+				font-size: 15px;
+				font-weight: normal;
+			}
+
+			.text
+			{
+				font-size: 15px;
+				font-weight: normal;
+				margin-bottom: 14px;
+				margin-top: 10px;
+			}
+
+			.toc
+			{
+				border: 1px solid gray;
+				background-color: #E6E6E6;
+				padding: 8px 9px;
+				font-size: 15px;
+			}
+
+			.toc h2
+			{
+				margin: 0px 0px 3px 0px;
+				font-size: 19px;
+			}
+
+			.toc ul
+			{
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding-left: 25px;
+			}
+
+			.toc li
+			{
+				margin-bottom: 2px;
+			}
+
+			.toc .alternatives
+			{
+				font-size: 12px;
+			}
+
+			.toc a
+			{
+				color: #292722;
+			}
+
+			.toc a:hover
+			{
+				color: black;
+			}
+			
+			.fixed
+			{
+				font-family: monospace;
+				background-color: white;
+				padding: 1px 4px;
+				border: 1px solid silver;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="children"><h1>ZippyDoc format documentation</h1><div class="text"><a href="documentation.zpy">Download the ZippyDoc source of this page.</a></div><div class="text">ZippyDoc is a compact, light-weight and code-oriented documentation markup language.  It allows you to easily write documentation for your code or APIs, and batch-convert it to HTML.</div><div class="toc"><h2>Table of contents</h2><ul><li><a href="#def_Definitionblock">Definition block</a> A definition block is prefixed with a caret, and contains something along the... </li><li><a href="#def_Argumentblock">Argument block</a> An argument block shows a particular argument or parameter, and its explanation.... </li><li><a href="#def_Exampleblock">Example block</a> An example block shows an example of the function you are documenting, with code... </li><li><a href="#def_Codeblock">Code block</a> The code block is used in an example to show example code. It is prefixed with a... </li><li><a href="#def_Outputblock">Output block</a> The output block is used to display sample output in an example. Just like the... </li><li><a href="#def_Exclamationblock">Exclamation block</a> The exclamation block allows you to mark a block of text as "important". In the... </li><li><a href="#def_Headerblock">Header block</a> A header block is a generic header to indicate the start of a new section. It is... </li><li><a href="#def_Textblock">Text block</a> A text block is any block that is not prefixed by a special character. It is... </li><li><a href="#def_Emphasizedtext">Emphasized text</a> Emphasized text is typically displayed as italic. You can emphasize text by... </li><li><a href="#def_Strongtext">Strong text</a> Strong text is typically displayed as bold. You can make text strong by... </li><li><a href="#def_Internalreferenceshyperlinks">Internal references (hyperlinks)</a> Internal references are hyperlinks that point to other documents in the same... </li><li><a href="#def_Externalreferenceshyperlinks">External references (hyperlinks)</a> External references are hyperlinks just like the internal references, but they... </li><li><a href="#def_Fixedwidthtext">Fixed-width text</a> Fixed-width text can be useful to indicate code elements or other things that... </li><li><a href="#def_Tableofcontents">Table of contents</a> To insert a table of contents that is automatically generated from all... </li></ul></div><h2>Format overview</h2><div class="text">ZippyDoc is a paragraph-oriented format, much like Markdown. Each paragraph represents a "block" of something, and no linebreaks are used anywhere - to start on a new line, you simply start out with a new paragraph. A block is indicated by a specific prefix. Tabs (not spaces!) are used to indent blocks and indicate children of previous blocks. A new "paragraph" is started by having two or more successive line-endings - this basically comes down to at least one empty line inbetween paragraphs.</div><div class="text">There is also some inline markup available, including emphasis, strong text, and hyperlinks to both other ZippyDoc documents and external locations.</div><h2>Blocks</h2><div class="text">Several block types exist. Some of them have "continuation characters" that indicate the continuation of the previous block in a new paragraph, as opposed to  starting a new block.</div><div class="definition"><a name="def_Definitionblock">Definition block <div class="children"><div class="text">A definition block is prefixed with a caret, and contains something along the lines of a function definition or type. In this particular document, it is used to denote the types of blocks and markup elements. Inline markup (such as the emphasis for arguments in the below example) is applied. These blocks are used for a table of contents if you choose to use one.</div><div class="example">Example: Using a definition block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.</pre></div></div><div class="text">You can also have an alternative notation for a definition. This can be useful if you have aliased functions, or multiple input forms. The alternative notation should be put on the same indentation as the original definition, but without a caret in front. The alternative notations (there is no limit) are shown separately in the table of contents if you choose to use one. You may indent the alternative notations with spaces to make the definition easier to read.</div><div class="example">Example: Using a definition block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+  alt_func(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.</pre></div></div></div></a></div><div class="definition"><a name="def_Argumentblock">Argument block <div class="children"><div class="text">An argument block shows a particular argument or parameter, and its explanation. The argument name is suffixed with a double colon (::), and the explanation follows on the next line. If so desired, the explanation can be indented with a tab - the tabs in front of the explanation will be eaten by the parser. The explanation can also consist of multiple lines - the newlines are preserved in the HTML version. Inline markup is applied only in the explanation.</div><div class="example">Example: Using an argument block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.</pre></div></div></div></a></div><div class="definition"><a name="def_Exampleblock">Example block <div class="children"><div class="text">An example block shows an example of the function you are documenting, with code and output. The example block itself is prefixed with an @, and only specifies a title;  you will use indented children of the Code and Output block variety to show respectively the code and the output for the example. These blocks will be explained later on. The title of your example block will be prefixed with "Example:" in the output automatically.</div><div class="example">Example: Using an example block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ Some code goes here.
+
+		&gt; Some output goes here.</pre></div></div></div></a></div><div class="definition"><a name="def_Codeblock">Code block <div class="children"><div class="text">The code block is used in an example to show example code. It is prefixed with a dollar sign ($), and all text following it will be show on the HTML page verbatim, without any further markup processing being done. It even allows you to display ZippyDoc formatting characters without having them interpreted, as is done on this page!</div><div class="example">Example: Using a code block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ my_function(42, "The answer to everything")
+
+		&gt; Some output goes here.</pre></div></div><div class="text">It is also possible to have a code block spanning multiple paragraphs, without each paragraph being broken up into a separate code block (as would normally happen if you just used the dollar sign). To do this, you can use two dollar signs at the start of the block. Note that after these two dollar signs, whitespace (except for spaces) is  <em>not</em> eaten, meaning you can use tabs to indent further blocks of your code!</div><div class="example">Example: Using a multi-paragraph code block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ if some_variable == True:
+
+		$$	my_function(42, "The answer to everything")
+
+		&gt; Some output goes here.</pre></div></div></div></a></div><div class="definition"><a name="def_Outputblock">Output block <div class="children"><div class="text">The output block is used to display sample output in an example. Just like the code block, it is shown exactly as it originally was, without any further formatting applied. It is prefixed by a >, and like the code block it has a continuation character - in this case, that is >>.</div><div class="example">Example: Using an output block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ my_function(42, "The answer to everything")
+
+		&gt; The answer to everything is 42!</pre></div></div><div class="example">Example: Using a multi-paragraph output block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ my_function(42, "The answer to everything")
+
+		&gt; The answer to everything is 42!
+
+		&gt;&gt; Did you know The answer to everything is 42?</pre></div></div></div></a></div><div class="definition"><a name="def_Exclamationblock">Exclamation block <div class="children"><div class="text">The exclamation block allows you to mark a block of text as "important". In the standard HTML layout, it will have a yellow-ish background, and will be prefixed with "<strong>Important!</strong>". It is prefixed with an exclamation mark (!). Inline markup is applied.</div><div class="example">Example: Using an exclamation block <div class="children"><h7>Code:</h7><pre class="code">^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	! Only ever use this function with the number '42'!
+
+	argument::
+		This is the first argument to this example function.
+
+	another_argument::
+		This is the second argument to this example function.
+		As you can see, it's possible to split the explanation over multiple lines as well.
+
+	@ Using this function
+
+		$ my_function(42, "The answer to everything")
+
+		&gt; The answer to everything is 42!</pre></div></div></div></a></div><div class="definition"><a name="def_Headerblock">Header block <div class="children"><div class="text">A header block is a generic header to indicate the start of a new section. It is treated as a separate element, not as a "container". The header blocks in ZippyDoc work similarly to those in Markdown: they are prefixed by a hash (#), and the amount of hash characters defines what level of header it is.</div><div class="example">Example: Using header blocks <div class="children"><h7>Code:</h7><pre class="code"># This is a level 1 (largest) header.
+
+## This is a level 2 header.
+
+...
+
+####### This is a level 7 (smallest) header.</pre></div></div></div></a></div><div class="definition"><a name="def_Textblock">Text block <div class="children"><div class="text">A text block is any block that is not prefixed by a special character. It is shown as defined, with inline markup applied.</div></div></a></div><h2>Inline markup</h2><div class="text">There are also various forms of inline markup that you can use in your documentation.</div><div class="definition"><a name="def_Emphasizedtext">Emphasized text <div class="children"><div class="text">Emphasized text is typically displayed as italic. You can emphasize text by enclosing it in two asterisks on each side.</div><div class="example">Example: Emphasizing text <div class="children"><h7>Code:</h7><pre class="code">This is just some text, and **this part is emphasized**.</pre></div></div></div></a></div><div class="definition"><a name="def_Strongtext">Strong text <div class="children"><div class="text">Strong text is typically displayed as bold. You can make text strong by enclosing it in two underscores on each side.</div><div class="example">Example: Making text strong <div class="children"><h7>Code:</h7><pre class="code">This is just some text, __and this part is strong__.</pre></div></div></div></a></div><div class="definition"><a name="def_Internalreferenceshyperlinks">Internal references (hyperlinks) <div class="children"><div class="text">Internal references are hyperlinks that point to other documents in the same documentation set. Depending on the export format (currently only HTML is supported), the appropriate extension is automatically appended. The paths should resemble the directory structure you are storing the ZippyDoc source files in. The target of the reference is enclosed in curly braces and prefixed with a >. If you wish to give the reference a friendly description, you can do so by appending it,  enclosed in parentheses.</div><div class="example">Example: Referencing another documentation page <div class="children"><h7>Code:</h7><pre class="code">You can also view the API documentation at {&gt;api/index}.</pre></div></div><div class="example">Example: Referencing another documentation page with a friendly description <div class="children"><h7>Code:</h7><pre class="code">You can also view the {&gt;api/index}(API documentation).</pre></div></div></div></a></div><div class="definition"><a name="def_Externalreferenceshyperlinks">External references (hyperlinks) <div class="children"><div class="text">External references are hyperlinks just like the internal references, but they refer to an external resources. The syntax is identical to that of internal references, except for the > disappearing. Note that external references are only picked up when the text enclosed in the braces is an actual URI of some sort.</div><div class="text">You can also force an external reference to be created by prefixing the URI with <. This is useful when you want to for example link to a download relative to the current page.</div><div class="example">Example: Referencing Google <div class="children"><h7>Code:</h7><pre class="code">You could also search {http://www.google.com/}.</pre></div></div><div class="example">Example: Referencing another documentation page with a friendly description <div class="children"><h7>Code:</h7><pre class="code">You could also search {http://www.google.com/}(Google).</pre></div></div><div class="example">Example: Referencing a relative file that is not a ZippyDoc document <div class="children"><h7>Code:</h7><pre class="code">You can download it by {&lt;file.zip}(clicking here).</pre></div></div></div></a></div><div class="definition"><a name="def_Fixedwidthtext">Fixed-width text <div class="children"><div class="text">Fixed-width text can be useful to indicate code elements or other things that would benefit from being displayed in a terminal-like font. You can make text fixed-width by enclosing it in backticks.</div><div class="example">Example: Fixed-width text <div class="children"><h7>Code:</h7><pre class="code">Now enter `./run.sh` into your terminal.</pre></div></div></div></a></div><h2>Special tags</h2><div class="text">Currently there is only one special tag. Special tags can be inserted anywhere in the document to insert a generated element.</div><div class="definition"><a name="def_Tableofcontents">Table of contents <div class="children"><div class="text">To insert a table of contents that is automatically generated from all definition blocks on the page, simply insert {TOC} on the page where you want it to appear (it has to be in its own paragraph). Typically you will want to place it just below the main page header.</div><div class="text">Every item in a table of contents will be followed by a snippet of text, that is grabbed from the first Text block for that definition. Alternative notations are shown after this description.</div><div class="example">Example: Including a table of contents <div class="children"><h7>Code:</h7><pre class="code"># Sample documentation
+
+{TOC}
+
+^ my_function(**argument**, **another_argument**)
+
+	Some kind of text describing the function goes here.
+
+	...</pre></div></div></div></a></div><h2>Full example</h2><div class="text">You can <a href="example.html">view a full example here</a> of a ZippyDoc source file and its result.</div></div>
+	</body>
+</html>
