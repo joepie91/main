@@ -6,9 +6,9 @@
 # Author: Sven Slootweg
 # License: WTFPL, use it as you wish
 
-import requests, re, sys, urllib, math
+import re, sys, urllib, math
 
-body = re.search("<script[^>]*>(.*)<\/script>", requests.get(sys.argv[1]).text).group(1)
+body = re.search("<script[^>]*>(.*)<\/script>", urllib.urlopen(sys.argv[1]).read()).group(1)
 #script = re.search('eval\(unescape\("([^"]+)"\)\);', body).group(1)   # We don't actually need this, but we might in the future
 first_payload = re.search('c="([^"]+)"', body).group(1)
 second_payload = re.search('x\("([^"]+)"\);', body).group(1)
